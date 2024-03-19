@@ -1,15 +1,13 @@
-name: Aprendiendo GitHub Actions
-run-name: Estoy aprendiendo GitHub Actions
+name: Aprendiendo Github Actions
+run-name: Estoy aprendiendo Github Actions!!!
 on: [push]
 jobs:
-  Hola mundo:
+  hola-mundo:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-      - uses: actions/checkout@v3
-      
+        uses: actions/checkout@v3
       - name: Definir variable
-        run: echo Hola mundo!
-        
+        run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
       - name: Correr script
         run: index.php
